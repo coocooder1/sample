@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/sample/static/css/main.d2668fa3.css",
+    "main.js": "/sample/static/js/main.07a825b4.js",
+    "static/js/453.5d7a5659.chunk.js": "/sample/static/js/453.5d7a5659.chunk.js",
+    "static/media/gallery3.JPG": "/sample/static/media/gallery3.885ee87aa17906ed7296.JPG",
+    "static/media/gallery1.JPG": "/sample/static/media/gallery1.cae7d8535d4d7ed1b8c8.JPG",
+    "static/media/gallery4.JPG": "/sample/static/media/gallery4.97c737c32f6fbf43e066.JPG",
+    "static/media/about-img.JPG": "/sample/static/media/about-img.9ff2ad6e416ac547f013.JPG",
+    "static/media/gallery2.JPG": "/sample/static/media/gallery2.107de398e458fa6a3c8d.JPG",
+    "static/media/DSCF0473.JPG": "/sample/static/media/DSCF0473.fa991d5e099f6f9394ae.JPG",
+    "static/media/dinner.jpg": "/sample/static/media/dinner.71151e9c56f68830b4d5.jpg",
+    "static/media/breakfast.jpg": "/sample/static/media/breakfast.fa241a648df36d5e0b55.jpg",
+    "static/media/aboutchef3.jpg": "/sample/static/media/aboutchef3.50d0af04220ece7b5b78.jpg",
+    "static/media/contact.jpg": "/sample/static/media/contact.d328fddcaba555dcd864.jpg",
+    "static/media/aboutchef2.jpg": "/sample/static/media/aboutchef2.7ee19ab48f4bc158012f.jpg",
+    "static/media/aboutchef1.jpg": "/sample/static/media/aboutchef1.920a0719c34c29eec63f.jpg",
+    "static/media/lunch.jpg": "/sample/static/media/lunch.0bb74a491f4b0bd5a2ba.jpg",
+    "index.html": "/sample/index.html",
+    "main.d2668fa3.css.map": "/sample/static/css/main.d2668fa3.css.map",
+    "main.07a825b4.js.map": "/sample/static/js/main.07a825b4.js.map",
+    "453.5d7a5659.chunk.js.map": "/sample/static/js/453.5d7a5659.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2668fa3.css",
+    "static/js/main.07a825b4.js"
+  ]
+}

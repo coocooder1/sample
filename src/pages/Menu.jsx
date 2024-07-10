@@ -7,40 +7,34 @@ import Dinner from '../utils/img/dinner.jpg'
 const breakfast = [
   {
     id:1,
-    name:'番茄炒蛋',
-    description: '蛋, 糖, 番茄, ',
+    name:'可頌',
     price:'$120'
   },
    {
     id:2,
-    name:'章魚',
-    description: '蛋, 糖, 番茄, ',
-    price:'$120'
+    name:'糖霜可頌',
+    price:'$140'
   },
    {
     id:3,
-    name:'壽司',
-    description: '蛋, 糖, 番茄, ',
-    price:'$120'
+    name:'奶油可頌',
+    price:'$140'
   }
 ];
 const lunch = [
   {
     id:1,
     name:'凱薩',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   },
    {
     id:2,
     name:'炒飯',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   },
    {
     id:3,
     name:'滷肉飯',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   }
 ];
@@ -49,19 +43,16 @@ const dinner = [
   {
     id:1,
     name:'鴨肉豬血糕',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   },
    {
     id:2,
     name:'什錦炒麵',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   },
    {
     id:3,
     name:'蛋花湯',
-    description: '蛋, 糖, 番茄, ',
     price:'$120'
   }
 ]
@@ -92,9 +83,7 @@ function Menu() {
                       {breakfast.name}
 
                     </CardTitle>
-                    <CardText className='text-center fs-5' >
-                      {breakfast.description}
-                    </CardText>
+                  
                     <CardText className='text-center fs-3 fw-bold text-success' >
                       {breakfast.price}
                     </CardText>
@@ -128,9 +117,7 @@ function Menu() {
                       {lunch.name}
 
                     </CardTitle>
-                    <CardText className='text-center fs-5' >
-                      {lunch.description}
-                    </CardText>
+                   
                     <CardText className='text-center fs-3 fw-bold text-success' >
                       {lunch.price}
                     </CardText>
@@ -164,9 +151,7 @@ function Menu() {
                       {dinner.name}
 
                     </CardTitle>
-                    <CardText className='text-center fs-5' >
-                      {dinner.description}
-                    </CardText>
+    
                     <CardText className='text-center fs-3 fw-bold text-success' >
                       {dinner.price}
                     </CardText>

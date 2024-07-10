@@ -2,36 +2,38 @@ import React,{useState} from 'react'
 import './Contact.css'
 import {ContactInfo} from '../components/ContactInfo'
 import { Form } from 'react-bootstrap'
-import axios from 'axios';
-function Contact() {
-    const [formData, setFormData] = useState({
-    firstname: '',
-    lastname:'',
-    email: '',
-    phone:'',
-    date:'',
-    message: ''
-  });
 
-   const handleChange = (e) => {
-    const { name, value } = e.target;
-   
-    setFormData({ ...formData, [name]: value });
-    
+import { collection,addDoc } from 'firebase/firestore';
+
+import { db } from '../firebase';
+function Contact() {
+  
+  const [newfirstname, setFirstName] =useState("")
+  const [newlastname, setLastName] = useState("")
+  const [newemail, setEmail] = useState("")
+  const [newphone, setPhone] = useState("")
+  const [newdata, setData] = useState("")
+  const [newmessage, setMessage] = useState("")
+  const formssCollectionRef = collection(db,"forms1")
+
+
+  const createForm = async () => {
+    await addDoc(formssCollectionRef, {firstname: newfirstname,
+      lastname: newlastname, email:newemail, number:newphone, data:newdata, message:newmessage})
   };
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://localhost:3001/api/form', formData);
-    console.log('Form submitted successfully:', response.data);
-    alert('Form submitted successfully!');
-    setFormData({ name: '', email: '',  message: '' });
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    alert('Failed to submit form: ' + error.message); // 输出具体错误信息
-  }
-};
+   const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newfirstname.trim() === '' || newlastname.trim() === '' || newemail.trim() === '' || newphone.trim() === '') {
+      alert('請輸入有效內容！');
+      return;
+    }
+    // 在這裡可以處理表單提交的邏輯，比如發送請求或者其他操作
+    console.log('提交的值：', newfirstname);
+    setFirstName(''); // 清空輸入框
+  };
+
+
 
   
   return (
@@ -51,16 +53,16 @@ function Contact() {
             <Form.Group className='row mb-3'>
               <div className='col-md-6'>
               <Form.Label htmlFor='first-name'>First Name</Form.Label>
-              <Form.Control type="text" id="firsname" name="firstname" value={formData.firstname}
-onChange={handleChange}
-            required>
+              <Form.Control type="text"   onChange={(event) => {
+        setFirstName(event.target.value)
+      }}>
               </Form.Control>              
               </div>
               <div className='col-md-6'>
               <Form.Label htmlFor='last-name'>Last Name</Form.Label>
-              <Form.Control type="text" name="lastname" value={formData.lastname}
-onChange={handleChange}
-            required>
+              <Form.Control type="text"   onChange={(event) => {
+        setLastName(event.target.value)
+      }}>
               </Form.Control>              
               </div>              
             </Form.Group>
@@ -69,16 +71,16 @@ onChange={handleChange}
               <Form.Label htmlFor='email-address'>Email</Form.Label>
               <Form.Control type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required>
+            onChange={(event) => {
+        setEmail(event.target.value)
+      }}>
               </Form.Control>              
               </div>
               <div className='col-md-6'>
               <Form.Label htmlFor='phone-number'>Phone Number</Form.Label>
-              <Form.Control type='tel' name='phone'value={formData.phone}
-            onChange={handleChange}
-            required >
+              <Form.Control type='tel' name='phone' onChange={(event) => {
+        setPhone(event.target.value)
+      }}>
               </Form.Control>              
               </div>              
             </Form.Group>
@@ -86,9 +88,9 @@ onChange={handleChange}
             <Form.Group className='row mb-3'>
               <div className='col-md-6'>
               <Form.Label htmlFor='date'>Date</Form.Label>
-              <Form.Control type='date' name='date' value={formData.date}
-            onChange={handleChange}
-            required>
+              <Form.Control type='date' name='date' onChange={(event) => {
+        setData(event.target.value)
+      }}>
               </Form.Control>              
               </div>
               <div className='col-md-6'>
@@ -100,20 +102,21 @@ onChange={handleChange}
 
              <Form.Group className='row mb-3'>
               
-              <Form.Label htmlFor='comments'>Comments</Form.Label>
+              <Form.Label htmlFor='comments'>備註</Form.Label>
               <Form.Control name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required>
+            onChange={(event) => {
+        setMessage(event.target.value)
+      }}>
               </Form.Control>              
                     
             </Form.Group>
-            <button type='submit ' className='btn btn-success btn-lg
-            '>Submit</button>
+            </Form>
+            
 
-          </Form>
+          
           
         </div>
+        <button className='btn' type='submit ' onClick={createForm}>Submit</button>
 
       </div>
       

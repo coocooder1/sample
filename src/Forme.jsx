@@ -32,7 +32,7 @@ function Forme() {
   return (
     <div className='form'>
       <div className='container mt-5'>
-        <h3>表單</h3>
+        <h3>評論</h3>
           <input type='text'  placeholder='Your Name' onChange={(event) => {
         setNewName(event.target.value)
       }}></input>
@@ -46,7 +46,7 @@ function Forme() {
         setNewMessage(event.target.value)
       }}></input>
           <tr></tr>
-      <button className='button' onClick={createForm}>Create Form</button>
+      <button className='button' onClick={createForm}>送出</button>
     
 
 
